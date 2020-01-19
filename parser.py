@@ -22,7 +22,7 @@ def get_link(artist, song):
 def songs_links(artist, songs):
     songs_links = {}
     for song in songs:
-        songs_links[song] = get_link(artist, song)
+        songs_links[song] = 'https://www.youtube.com' + get_link(artist, song)
     return songs_links
 
 

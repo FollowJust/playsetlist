@@ -1,30 +1,18 @@
 import parser
 import vlc
-from time import sleep
+import os
 
-def play_url(url):
-    #media = vlc.MediaPlayer("MEDIA FILE HERE")
-    i = vlc.Instance()
-    media_player = i.media_player_new()
-    media_player.set_mrl('https://www.youtube.com/watch?v=tVwl0iBhfIU')
-    media_player.play()
-    while True:
-        pass
-    '''
-    sleep(10)
-    while player.is_playing():
-        sleep(1)
-    '''
+def play_urls(urls):
+    os.system(f"vlc {' '.join(songs_links.values())}")
+    print('Goodbye!')
     return None
-
-'''
+print('Hello! Welcome to setlist player. Enter the link to the setlist on setlist.fm, please.')
 link = input()
 artist, songs = parser.get_info(link)
-print(artist)
-print(songs)
-
+print(f'Ok, we are listening to {artist}. The setlist is:\n')
+for i in songs:
+    print(i)
+print('\nPlease, wait a little bit...')
 songs_links = parser.songs_links(artist, songs)
-print(songs_links['Ludens'])
-'''
-playthis = '/watch?v=B9wvTuDC-H0'
-play_url(playthis)
+print('Have a nice listen!')
+play_urls(songs_links.values)
