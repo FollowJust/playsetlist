@@ -3,7 +3,7 @@ import vlc
 import os
 
 def play_urls(urls):
-    os.system(f"vlc {' '.join(songs_links.values())}")
+    os.system(f"vlc -q {' '.join(songs_links.values())}")
     print('Goodbye!')
     return None
 print('Hello! Welcome to setlist player. Enter the link to the setlist on setlist.fm, please.')
